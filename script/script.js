@@ -49,4 +49,13 @@ window.addEventListener('DOMContentLoaded', function(){
 			}
     });
   });
+
+	const swiper = new Swiper('.swiper-container', {
+    speed: 2000,
+    autoplay: {
+        delay: 4000,
+    },
+    direction: 'horizontal',
+    loop: true,
+  });
 });

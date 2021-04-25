@@ -64,6 +64,16 @@
        url('../fonts/open-sans-v18-latin-800.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
+@keyframes zoom{
+  0%{
+   transform: scale(1);
+  }
+
+  100%{
+    transform: scale(1.2);
+  }
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -98,6 +108,17 @@ h4,
 h5,
 h6{
   margin: 0;
+}
+
+.visually-hidden {
+  position: absolute!important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0!important;
+  border: 0!important;
+  height: 1px!important;
+  width: 1px!important;
+  overflow: hidden;
 }
 
 .menu-wrap__link{
@@ -157,6 +178,114 @@ h6{
 
 .account-wrap__link:active::before{
   filter: invert(75%) sepia(36%) saturate(7001%) hue-rotate(261deg) brightness(103%) contrast(104%);
+}
+
+.header{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+.swiper-slide{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide-active{
+  animation: zoom alternate 5s linear infinite;
+}
+
+.swipre-slide__one{
+  background-image: url('../image/slider_one.png');
+}
+
+.swipre-slide__two{
+  background-image: url('../image/slider_two.png');
+}
+
+.swipre-slide__three{
+  background-image: url('../image/slider_three.png');
+}
+
+.block-text__title{
+  margin-bottom: 20px;
+  font-size: 75px;
+  color: var(--HeaderFooter-textColor);
+  font-weight: 700;
+}
+
+.block-text__text{
+  margin-bottom: 97px;
+  line-height: 27px;
+  font-size: 19px;
+  color: var(--HeaderFooter-textColor);
+  font-weight: 700;
+}
+
+.block-text__link{
+  position: relative;
+  display: inline-block;
+  padding: 22px 35px;
+  font-size: 18px;
+  color: var(--HeaderFooter-textColor);
+  font-weight: 700;
+  background-color: #9D5CD0;
+  border-radius: 100px;
+  border: 3px solid transparent;
+  transition: border 0.4s ease;
+  outline: none;
+}
+
+.block-text__link:before{
+  opacity: 0;
+  position: absolute;
+  content: '';
+  box-sizing: unset;
+  left: -7px;
+  top: -7px;
+  width: 100%;
+  height: 100%;
+  padding-top: 6px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 4px;
+  border: 2px solid #C283F3;
+  border-radius: 100px;
+}
+
+.block-text__link:focus:before{
+  opacity: 1;
+}
+
+.block-text__link:hover{
+  border: 3px solid #D1A9F0;
+}
+
+.swiper__block-text{
+  position: relative;
+  z-index: 2;
+  max-width: 1600px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 240px auto 0;
+  box-sizing: content-box;
+}
+
+.block-text__wrap{
+  max-width: 597px;
+}
+
+.swiper-wrapper{
+  position: absolute;
+}
+
+.swiper-container{
+  min-height: 800px;
+}
+
+.swiper-slide{
+  min-height: 800px;
 }
 
 .category-menu__link{
@@ -474,8 +603,34 @@ h6{
 }
 
 @media screen and (max-width: 1500px){
+  .swiper-container{
+    min-height: 768px;
+  }
+
+  .block-text__title{
+    max-width: 590px;
+    letter-spacing: 2.1px;
+    font-size: 71px;
+  }
+
+  .block-text__text{
+    margin-bottom: 133px;
+  }
+
+  .block-text__link{
+    letter-spacing: 0.1px;
+  }
+  
   .bottom{
     display: none;
+  }
+
+  .block-text__wrap{
+    max-width: 655px;
+  }
+
+  .swiper__block-text{
+    margin: 214px auto 0;
   }
 
   .search-mob{
@@ -523,8 +678,9 @@ h6{
     left: 0;
     top: 0;
     transform: translateX(-3000px);
-    height: 100vh;
+    height: auto;
     padding-left: 50px;
+    padding-bottom: 20px;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9);
     transition: transform 0.4s ease;
@@ -625,6 +781,10 @@ h6{
     width: 100%;
   }
 
+  .swiper-container{
+    min-height: 768px;
+  }
+
   .search-mob{
     transition: width 0.4s ease, left 0.4s ease;
   }
@@ -683,7 +843,51 @@ h6{
   }
 }
 
+@media screen and (max-width: 660px){
+  .block-text__title{
+    font-size: 46px;
+  }
+
+  .block-text__text{
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .block-text__wrap{
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 450px){
+  .block-text__title{
+    margin-bottom: 15px;
+    font-size: 32px;
+  }
+
+  .block-text__text{
+    margin-bottom: 54px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .swiper-container{
+    min-height: 355px;
+  }
+
+  .block-text__link{
+    padding: 11px 16px 14px 19px;
+    font-size: 12px;
+  }
+
+  .swiper__block-text{
+    padding-left: 15px;
+    padding-right: 20px;
+  }
+
+  .swiper__block-text{
+    margin: 80px auto 0;
+  }
+
   .search-mob_active{
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(40px);
