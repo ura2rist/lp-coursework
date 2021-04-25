@@ -602,6 +602,31 @@ h6{
   display: none;
 }
 
+.block-wrap{
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.about__title{
+  margin-bottom: 22px;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.about__text{
+  max-width: 1085px;
+  line-height: 32px;
+  letter-spacing: 0.3px;
+}
+
+.about{
+  box-sizing: content-box;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 85px;
+  padding-bottom: 70px;
+}
+
 @media screen and (max-width: 1500px){
   .swiper-container{
     min-height: 768px;
@@ -844,6 +869,20 @@ h6{
 }
 
 @media screen and (max-width: 660px){
+  .about__title{
+    margin-bottom: 14px;
+    font-size: 28px;
+  }
+  
+  .about__text{
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .about{
+    padding-top: 53px;
+  }
+
   .block-text__title{
     font-size: 46px;
   }
@@ -859,6 +898,12 @@ h6{
 }
 
 @media screen and (max-width: 450px){
+  .about{
+    box-sizing: content-box;
+    padding-left: 15px;
+    padding-right: 5px;
+  }
+
   .block-text__title{
     margin-bottom: 15px;
     font-size: 32px;
