@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function(){
 	let mobClose = document.querySelector('.menu-close-mob'); // Кнопка закрытия меню бургера
 	let searchForm = document.querySelector('.search__button'); // Кнопка поиска
 	let seacrhFormClose = document.querySelector('.menu-closeSearch-mob'); // Закрытие формы поиска
+	let sel = document.querySelector('.selectCustom');	// Кастомный селектор
 
 	/* Появление формы поиска */
 	searchForm.addEventListener('click', function(event){
@@ -50,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-	const swiper = new Swiper('.swiper-container', {
+	const swiper = new Swiper('.slider1', {
     speed: 2000,
     autoplay: {
         delay: 4000,
@@ -58,4 +59,48 @@ window.addEventListener('DOMContentLoaded', function(){
     direction: 'horizontal',
     loop: true,
   });
+
+	const swiper2 =  new Swiper(".slider2", {
+		slidesPerGroup: 3,
+		slidesPerView: 3,
+		slidesPerColumn: 2,
+		spaceBetween: 50,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			1024: {
+				slidesPerGroup: 2,
+				slidesPerView: 2,
+				spaceBetween: 34,
+			},
+			1675: {
+				slidesPerGroup: 3,
+				slidesPerView: 3,
+				slidesPerColumn: 2,
+				spaceBetween: 50,
+			}
+		}
+	});
+
+	const choices = new Choices(sel, {
+		searchEnabled: false,
+		shouldSort: false,
+		itemSelectText: '',
+  });
+
+	document.querySelectorAll('.swiper2-slide-custom').forEach(function(item){
+		item.addEventListener('click', function(event){
+			document.querySelector('.modal-content').innerHTML = '';
+			let cont = event.currentTarget.querySelector('.swiper-img').outerHTML + event.currentTarget.querySelector('.gallery__hide-content').outerHTML;
+			document.querySelector('.modal-content').innerHTML = cont;
+		})
+	});
+
+	const modal = new GraphModal();
 });
