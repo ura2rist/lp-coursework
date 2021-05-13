@@ -196,26 +196,26 @@ h6{
   animation: zoom alternate 5s linear infinite;
 }
 
-.swipre-slide__one{
+.slider__slide-one{
   background-image: url('../image/slider_one.png');
 }
 
-.swipre-slide__two{
+.slider__slide-two{
   background-image: url('../image/slider_two.png');
 }
 
-.swipre-slide__three{
+.slider__slide-three{
   background-image: url('../image/slider_three.png');
 }
 
-.block-text__title{
+.slider__block-text__title{
   margin-bottom: 20px;
   font-size: 75px;
   color: var(--HeaderFooter-textColor);
   font-weight: 700;
 }
 
-.block-text__text{
+.slider__block-text__text{
   margin-bottom: 97px;
   line-height: 27px;
   font-size: 19px;
@@ -223,7 +223,7 @@ h6{
   font-weight: 700;
 }
 
-.block-text__link{
+.slider__block-text__link{
   position: relative;
   display: inline-block;
   padding: 22px 35px;
@@ -237,7 +237,7 @@ h6{
   outline: none;
 }
 
-.block-text__link:before{
+.slider__block-text__link:before{
   opacity: 0;
   position: absolute;
   content: '';
@@ -254,15 +254,15 @@ h6{
   border-radius: 100px;
 }
 
-.block-text__link:focus:before{
+.slider__block-text__link:focus:before{
   opacity: 1;
 }
 
-.block-text__link:hover{
+.slider__block-text__link:hover{
   border: 3px solid #D1A9F0;
 }
 
-.swiper__block-text{
+.slider__block-text{
   position: relative;
   z-index: 2;
   max-width: 1600px;
@@ -272,7 +272,7 @@ h6{
   box-sizing: content-box;
 }
 
-.block-text__wrap{
+.slider__block-text__wrap{
   max-width: 597px;
 }
 
@@ -404,11 +404,11 @@ h6{
   align-items: end;
 }
 
-.search_fill{
+.search__fill{
   transition: fill 0.4s ease;
 }
 
-.search:hover .search_fill{
+.search:hover .search__fill{
   fill: var(--hover-color);
 }
 
@@ -684,7 +684,7 @@ h6{
   color: var(--HeaderFooter-textColor);
 }
 
-.filter-bottom__text{
+.gallery__bottom__text{
   line-height: 32px;
   color: var(--HeaderFooter-textColor);
 }
@@ -848,56 +848,25 @@ h6{
 }
 
 @media screen and (max-width: 1500px){
-  .gallery__filter{
-    width: 280px;
-  }
-  
-  .gallery__filter-bottom{
-    width: 100%;
-  }
-
-  .gallery{
-    min-height: 840px;
-  }
-
-  .slider2 {
-    min-height: 675px;
-  }
-
   .choices {
     width: 280px;
-  }
-
-  .swiper2-slide-custom{
-    height: 280px;
-    width: 280px !important;
-  }
-
-  .swiper-img{
-    width: 280px;
-    height: 280px;
-  }
-
-  .gallery__slider {
-    max-width: 600px;
-    width: 100%;
   }
 
   .slider1{
     min-height: 768px;
   }
 
-  .block-text__title{
+  .slider__block-text__title{
     max-width: 590px;
     letter-spacing: 2.1px;
     font-size: 71px;
   }
 
-  .block-text__text{
+  .slider__block-text__text{
     margin-bottom: 133px;
   }
 
-  .block-text__link{
+  .slider__block-text__link{
     letter-spacing: 0.1px;
   }
   
@@ -905,11 +874,11 @@ h6{
     display: none;
   }
 
-  .block-text__wrap{
+  .slider__block-text__wrap{
     max-width: 655px;
   }
 
-  .swiper__block-text{
+  .slider__block-text{
     margin: 214px auto 0;
   }
 
@@ -1066,44 +1035,9 @@ h6{
     width: 317px;
     height: 280px;
   }
-
-  .gallery-wrap{
-    flex-direction: column;
-  }
-
-  .gallery__slider{
-    max-width: 666px;
-  }
-
-  .gallery{
-    position: relative;
-    min-height: 1169px;
-  }
-
-  .gallery__filter-bottom{
-    position: absolute;
-    bottom: 30px;
-    width: 666px;
-  }
-
-  .gallery__filter{
-    margin-bottom: 110px;
-  }
 }
 
 @media screen and (max-width: 840px){
-  .swiper2-slide-custom{
-    width: 9% !important;
-  }
-
-  .swiper-img{
-    width: 100%;
-  }
-
-  .gallery__filter{
-    margin-bottom: 13%;
-  }
-
   .search__text_active{
     width: 100%;
   }
@@ -1185,16 +1119,16 @@ h6{
     padding-top: 53px;
   }
 
-  .block-text__title{
+  .slider__block-text__title{
     font-size: 46px;
   }
 
-  .block-text__text{
+  .slider__block-text__text{
     font-size: 16px;
     font-weight: 400;
   }
 
-  .block-text__wrap{
+  .slider__block-text__wrap{
     text-align: center;
   }
 }
@@ -1206,12 +1140,12 @@ h6{
     padding-right: 5px;
   }
 
-  .block-text__title{
+  .slider__block-text__title{
     margin-bottom: 15px;
     font-size: 32px;
   }
 
-  .block-text__text{
+  .slider__block-text__text{
     margin-bottom: 54px;
     font-size: 12px;
     line-height: 16px;
@@ -1221,17 +1155,17 @@ h6{
     min-height: 355px;
   }
 
-  .block-text__link{
+  .slider__block-text__link{
     padding: 11px 16px 14px 19px;
     font-size: 12px;
   }
 
-  .swiper__block-text{
+  .slider__block-text{
     padding-left: 15px;
     padding-right: 20px;
   }
 
-  .swiper__block-text{
+  .slider__block-text{
     margin: 80px auto 0;
   }
 

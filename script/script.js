@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', function(){
     },
     direction: 'horizontal',
     loop: true,
+		allowTouchMove: false,
   });
 
 	const swiper2 =  new Swiper(".slider2", {
