@@ -44,6 +44,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/OpenSans-Bold.woff') format('woff'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
 @keyframes zoom{
   0%{
    transform: scale(1);
@@ -348,7 +357,7 @@ h6{
 .category-menu{
   display: flex;
   flex-wrap: wrap;
-  max-width: 1050px;
+  max-width: 1070px;
 }
 
 .menu-wrap__element{
@@ -474,7 +483,6 @@ h6{
 
 .drop-menu__wrap{
   height: 220px;
-  overflow: scroll;
 }
 
 .swip-wrap_mob{
