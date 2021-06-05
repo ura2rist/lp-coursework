@@ -147,4 +147,17 @@ window.addEventListener('DOMContentLoaded', function(){
 	$('.catalog__accordion').accordion({
 		heightStyle: 'content',
 	});
+
+	document.querySelector('#event__button').addEventListener('click', function(event){
+		document.querySelector('#event__button').style.display = 'none';
+		document.querySelectorAll('.event__element').forEach(function(item){
+			item.style.display = 'flex';
+		});
+	});
+
+	let swiper3 = new Swiper(".slider3", {
+		pagination: {
+			el: ".swiper-pagination",
+		},
+	});
 });
