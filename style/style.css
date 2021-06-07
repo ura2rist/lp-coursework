@@ -661,6 +661,16 @@ h6{
   padding: 16px 37px;
 }
 
+.event__button:hover{
+  background-color: #9D5CD0;
+  color: #ffffff;
+}
+
+.event__button:active{
+  background-color: #7943A4;
+  border-color: #D1A9F0;
+}
+
 .event__element:nth-child(3n){
   margin-right: 0;
 }
@@ -1252,7 +1262,7 @@ h6{
   }
 
   .slider__block-text{
-    margin: 227px auto 0;
+    margin: 214px auto 0;
   }
 
   .search-mob{
@@ -1292,7 +1302,7 @@ h6{
     flex-direction: row-reverse;
     position: relative;
     justify-content: space-between;
-    padding-top: 45px;
+    padding-top: 30px;
   }
 
   .menu-container{
@@ -1630,7 +1640,8 @@ h6{
   }
 
   .event__element{
-    margin: 0;
+    margin: 0 !important;
+    width: 100%;
   }
 
   .event__element:not(:nth-child(-n+2)){
