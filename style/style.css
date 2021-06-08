@@ -656,6 +656,8 @@ h6{
   margin: 0 auto;
   border: 2px solid #9D5CD0;
   font-size: 18px;
+  background-color: transparent;
+  font-weight: bold;
   color: #9D5CD0;
   border-radius: 100px;
   padding: 16px 37px;
