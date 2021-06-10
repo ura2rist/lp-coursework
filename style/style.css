@@ -941,6 +941,10 @@ h6{
   margin-right: auto;
 }
 
+.slider4{
+  height: 600px;
+}
+
 .swiper2-slide-custom{
   position: relative;
   height: 350px;

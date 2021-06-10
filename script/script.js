@@ -160,4 +160,37 @@ window.addEventListener('DOMContentLoaded', function(){
 			el: ".swiper-pagination",
 		},
 	});
+
+	const swiper4 =  new Swiper(".slider4", {
+		slidesPerGroup: 3,
+		slidesPerView: 3,
+		slidesPerColumn: 2,
+		spaceBetween: 50,
+		pagination: {
+			el: ".swiper-pagination",
+			type: "fraction",
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+      1: {
+				slidesPerGroup: 1,
+				slidesPerView: 1,
+        slidesPerColumn: 1,
+      },
+			450: {
+				slidesPerGroup: 2,
+				slidesPerView: 2,
+				spaceBetween: 34,
+			},
+			1300: {
+				slidesPerGroup: 3,
+				slidesPerView: 3,
+				slidesPerColumn: 2,
+				spaceBetween: 50,
+			}
+		}
+	});
 });
