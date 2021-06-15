@@ -798,6 +798,81 @@ h6{
   font-weight: 600;
 }
 
+.editions__title{
+  font-weight: normal;
+  font-size: 48px;
+  color: #FFFFFF;
+}
+
+.editions__subtitle{
+  font-weight: bold;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.editions{
+  background-image: url('../image/birmingham.png');
+}
+
+.editions__name-filter{
+  position: relative;
+  color: #FFFFFF;
+}
+
+.editions__name-filter:before{
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #FFFFFF;
+}
+
+.editions__name-filter:after{
+  position: absolute;
+  content: '';
+  display: none;
+  left: 3px;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background-color: #C283F3;
+  border-radius: 50%;
+}
+
+.editions__input-filter{
+  opacity: 0;
+  position: absolute;
+}
+
+.editions__input-filter:checked + .editions__name-filter:after{
+  display: inline-block;
+}
+
+.editions__input-filter:checked + .editions__name-filter:before{
+  border-color: #C283F3;
+}
+
+.editions__input-filter:checked + .editions__name-filter{
+  color: #C283F3;
+}
+
+.editions__price-text{
+  color: #FFFFFF;
+}
+
+.editions__praice-range{
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.editions__price-value{
+  background-color: rgba(157, 92, 208, 0.5);
+  color:#ffffff;
+  width: 73px;
+  border: none;
+}
+
 .catalog__link:hover{
   color: #9D5CD0;
   border-bottom: 1px solid #9D5CD0;
