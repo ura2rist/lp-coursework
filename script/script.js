@@ -162,9 +162,8 @@ window.addEventListener('DOMContentLoaded', function(){
 	});
 
 	const swiper4 =  new Swiper(".slider4", {
-		slidesPerGroup: 3,
+		slidesPerGroup: 1,
 		slidesPerView: 3,
-		slidesPerColumn: 2,
 		spaceBetween: 50,
 		pagination: {
 			el: ".swiper-pagination",
@@ -186,9 +185,8 @@ window.addEventListener('DOMContentLoaded', function(){
 				spaceBetween: 34,
 			},
 			1300: {
-				slidesPerGroup: 3,
+				slidesPerGroup: 1,
 				slidesPerView: 3,
-				slidesPerColumn: 2,
 				spaceBetween: 50,
 			}
 		}

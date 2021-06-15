@@ -636,6 +636,7 @@ h6{
 .event{
   padding-left: 50px;
   padding-right: 50px;
+  margin-bottom: 85px;
 }
 
 .event__container__text{
@@ -800,6 +801,7 @@ h6{
 
 .editions__title{
   font-weight: normal;
+  margin-bottom: 28px;
   font-size: 48px;
   color: #FFFFFF;
 }
@@ -978,6 +980,45 @@ h6{
 .container-wrap{
   max-width: 1600px;
   margin: 0 auto;
+}
+
+.editions__slider{
+  max-width: 1155px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.editions__wrap{
+  display: flex;
+  padding-top: 85px;
+  flex-wrap: wrap;
+}
+
+.editions__content__title{
+  font-weight: bold;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.editions__content__subtitle{
+  color: #FFFFFF;
+}
+
+.editions__content__button{
+  background-color: transparent;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.editions__content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.editions__content__price{
+  margin-left: auto;
+  font-style: italic;
+  color: #FFFFFF;
 }
 
 .about__title{
