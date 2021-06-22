@@ -180,11 +180,16 @@ window.addEventListener('DOMContentLoaded', function(){
         slidesPerColumn: 1,
       },
 			450: {
-				slidesPerGroup: 2,
+				slidesPerGroup: 1,
 				slidesPerView: 2,
-				spaceBetween: 34,
+				spaceBetween: 35,
 			},
-			1300: {
+			1000: {
+				slidesPerGroup: 1,
+				slidesPerView: 2,
+				spaceBetween: 50,
+			},
+			1501: {
 				slidesPerGroup: 1,
 				slidesPerView: 3,
 				spaceBetween: 50,

@@ -817,6 +817,9 @@ h6{
   padding-left: 50px;
   padding-right: 50px;
   background-image: url('../image/birmingham.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .editions__name-filter{
@@ -891,7 +894,7 @@ h6{
 .editions__praice-range{
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 6px;
-  width: fit-content;
+  width: max-content;
 }
 
 .editions__price-value{
@@ -1011,7 +1014,7 @@ h6{
 }
 
 .editions__slider{
-  max-width: 1155px;
+  max-width: 1150px;
   width: 100%;
   margin-left: auto;
 }
@@ -1020,7 +1023,6 @@ h6{
   display: flex;
   padding-top: 85px;
   padding-bottom: 80px;
-  flex-wrap: wrap;
 }
 
 .editions__content__title{
@@ -1028,6 +1030,9 @@ h6{
   font-weight: bold;
   font-size: 16px;
   color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .editions__content__subtitle{
@@ -1312,7 +1317,37 @@ h6{
   display: none;
 }
 
+.editions__swiper-img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.editions__filter{
+  width: 277px;
+}
+
+.editions__price-text:last-child{
+  padding-right: 5px;
+}
+
 @media screen and (max-width: 1500px){
+  .editions__slider{
+    max-width: 630px;
+  }
+
+  .editions__content{
+    padding-top: 15px;
+  }
+
+  .editions__content__name{
+    max-width: 70%;
+  }
+
+  .editions__content__price{
+    width: 30%;
+    text-align: right;
+  }
+
   .event__img{
     height: 281px;
   }
@@ -1566,6 +1601,71 @@ h6{
 }
 
 @media screen and (max-width: 840px){
+  .editions__list{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    flex-direction: column;
+    max-height: 115px;
+  }
+
+  .editions__slider{
+    max-width: 600px;
+    margin-left: 0;
+  }
+
+  .editions__subtitle{
+    margin-bottom: 16px;
+  }
+
+  .editions__element:nth-child(4n){
+    margin-bottom: 0;
+  }
+
+  .editions__filter{
+    margin-bottom: 33px;
+    width: auto;
+  }
+
+  .editions__content__button{
+    padding: 8px 20px;
+  }
+
+  .editions__prev{
+    left: 0;
+  }
+
+  .editions__next{
+    right: 0px;
+  }
+
+  .slider4{
+    height: 520px;
+  }
+
+  .edit-wrap{
+    left: 0;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .editions__content{
+    padding-top: 9px;
+  }
+
+  .editions__pag{
+    width: 66px;
+  }
+
+  .event__list{
+    margin-bottom: 30px;
+  }
+
+  .editions__wrap{
+    padding-bottom: 70px;
+    flex-direction: column;
+  }
+
   .event__element:not(:nth-child(-n+2)){
     display: none;
   }
