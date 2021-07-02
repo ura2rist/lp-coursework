@@ -161,39 +161,121 @@ window.addEventListener('DOMContentLoaded', function(){
 		},
 	});
 
-	const swiper4 =  new Swiper(".slider4", {
-		slidesPerGroup: 1,
-		slidesPerView: 3,
-		spaceBetween: 50,
-		pagination: {
-			el: ".swiper-pagination",
-			type: "fraction",
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		breakpoints: {
-      1: {
-				slidesPerGroup: 1,
-				slidesPerView: 1,
-        slidesPerColumn: 1,
-      },
-			450: {
-				slidesPerGroup: 1,
-				slidesPerView: 2,
-				spaceBetween: 35,
-			},
-			1000: {
-				slidesPerGroup: 1,
-				slidesPerView: 2,
-				spaceBetween: 50,
-			},
-			1501: {
-				slidesPerGroup: 1,
-				slidesPerView: 3,
-				spaceBetween: 50,
+	let swiper4;
+	let swiper4Block = document.querySelector('.slider4');
+
+	function mobileSlederDestroy(){
+		if(window.innerWidth > 660){
+			swiper4 =  new Swiper(".slider4", {
+				pagination: {
+					el: ".editions__pag",
+					type: "fraction",
+				},
+				navigation: {
+					nextEl: '.editions__next',
+					prevEl: '.editions__prev',
+				},
+				breakpoints: {
+					660: {
+						slidesPerGroup: 1,
+						slidesPerView: 2,
+						spaceBetween: 35,
+					},
+					1000: {
+						slidesPerGroup: 1,
+						slidesPerView: 2,
+						spaceBetween: 50,
+					},
+					1501: {
+						slidesPerGroup: 1,
+						slidesPerView: 3,
+						spaceBetween: 50,
+					}
+				}
+			});
+		}else{
+			if(swiper4Block.classList.contains('swiper-container-initialized')){
+				console.log(1)
+				swiper4.destroy();
 			}
 		}
+	}
+	mobileSlederDestroy();
+	window.addEventListener('resize', () => {
+		mobileSlederDestroy()
 	});
+
+	let editElem = document.querySelector('.editions__subtitle');
+
+	editElem.addEventListener('click', function(event){
+		editElem.classList.toggle('editions__subtitle_active');
+		document.querySelector('.editions__list').classList.toggle('editions__list_show');
+	});
+
+	document.querySelectorAll('.editions__input-filter').forEach(function(element){
+		element.addEventListener('change', function(event){
+			let editInp = [];
+			let editLi = ''
+			editInp = document.querySelectorAll('.editions__input-filter:checked');
+			editInp.forEach(function(element){
+				editLi += '<li class="editions__element">' + element.closest('.editions__element').innerHTML + '<div class="edition__close"><span></span><span></span></div></li>';
+			});
+			let editUl = document.createElement('ul');
+			editUl.className = 'editListener';
+			editUl.innerHTML = editLi;
+			if(document.querySelector('.editListener')){
+				document.querySelector('.editListener').remove();
+			}
+			if(window.innerWidth < 660){
+				document.querySelector('.editions__subtitle').after(editUl);
+			}
+		});
+	});
+
+	var swiper5 = new Swiper(".slider5", {
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: ".projact-next",
+    	prevEl: ".projact-prev",
+    },
+		breakpoints: {
+			1: {
+				slidesPerGroup: 1,
+				slidesPerView: 1,
+			},
+			550: {
+				slidesPerView: 2,
+				spaceBetween: 50,
+				slidesPerGroup: 2,
+			},
+			1500: {
+				slidesPerView: 3,
+				spaceBetween: 50,
+				slidesPerGroup: 3,
+			}
+		}
+  });
+
+	/* Карта */
+
+	ymaps.ready(init);
+	function init(){
+		var myMap = new ymaps.Map("contacts_map", {
+				center: [55.75846806898367,37.60108849999989],
+				zoom: 17
+		});
+
+		myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+			hintContent: 'Собственный значок метки',
+			balloonContent: 'Это красивая метка'
+		}, {
+			iconLayout: 'default#image',
+			iconImageHref: 'image/map_point.svg',
+			iconImageSize: [30, 42],
+			iconImageOffset: [-5, -38]
+		}),
+
+		myMap.geoObjects.add(myPlacemark)
+	}
 });
