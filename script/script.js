@@ -303,19 +303,16 @@ window.addEventListener('DOMContentLoaded', function(){
 				name: 'Укажите имя',
 				tel: 'Укажите номер телефона',
 		},
-
 		submitHandler: function(form, values, ajax) {
-
-				ajax({
-						url: '/send.php',
+				$.ajax({
+						url: 'send.php',
 						method: 'POST',
 						data: values,
-						async: true,
-						callback: function(response) {
-								alert('Запрос отправлен! \nСтатус отправки:' + response)
+						success: function(response) {
+							new GraphModal().open('second');
 						},
 						error: function(response) {
-								alert('AJAX submit error! \nResponse from server:' + response)
+							alert('AJAX submit error! \nResponse from server:' + response)
 						}
 				});
 		},

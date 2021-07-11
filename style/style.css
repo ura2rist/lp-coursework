@@ -1024,6 +1024,13 @@ h6{
   max-width: 1150px;
   width: 100%;
   margin-left: auto;
+  margin-right: auto;
+}
+
+.order{
+  flex-direction: column;
+  align-items: center;
+  color: green;
 }
 
 .projact-part__img{
@@ -1671,6 +1678,20 @@ h6{
   max-width: 157px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.contacts-request__buttom:hover{
+  background-color: #9D5CD0;
+  color: #ffffff;
+}
+
+.contacts-request__buttom:active{
+  color: #ffffff;
+  background-color: #7943A4;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #666666;
 }
 
 .contacts__soc-title{
