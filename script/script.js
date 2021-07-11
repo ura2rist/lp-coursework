@@ -195,7 +195,6 @@ window.addEventListener('DOMContentLoaded', function(){
 			});
 		}else{
 			if(swiper4Block.classList.contains('swiper-container-initialized')){
-				console.log(1)
 				swiper4.destroy();
 			}
 		}
@@ -208,29 +207,20 @@ window.addEventListener('DOMContentLoaded', function(){
 	let editElem = document.querySelector('.editions__subtitle');
 
 	editElem.addEventListener('click', function(event){
-		editElem.classList.toggle('editions__subtitle_active');
-		document.querySelector('.editions__list').classList.toggle('editions__list_show');
-	});
-
-	document.querySelectorAll('.editions__input-filter').forEach(function(element){
-		element.addEventListener('change', function(event){
-			let editInp = [];
-			let editLi = ''
-			editInp = document.querySelectorAll('.editions__input-filter:checked');
-			editInp.forEach(function(element){
-				editLi += '<li class="editions__element">' + element.closest('.editions__element').innerHTML + '<div class="edition__close"><span></span><span></span></div></li>';
-			});
-			let editUl = document.createElement('ul');
-			editUl.className = 'editListener';
-			editUl.innerHTML = editLi;
-			if(document.querySelector('.editListener')){
-				document.querySelector('.editListener').remove();
-			}
-			if(window.innerWidth < 660){
-				document.querySelector('.editions__subtitle').after(editUl);
-			}
+		document.querySelectorAll('.editions__element').forEach(function(item){
+			item.classList.toggle('editions__element_show');
+			if (item.querySelector(".editions__input-filter").checked) {
+				item.classList.add("editions__element_show");
+	 		}
 		});
 	});
+
+	document.querySelectorAll('.editions__input-filter').forEach(function(item){
+		item.addEventListener('change', function(event){
+			item.closest('.editions__element').classList.toggle('editions__element_show');
+		})
+	});
+
 
 	var swiper5 = new Swiper(".slider5", {
     loop: true,
@@ -278,4 +268,56 @@ window.addEventListener('DOMContentLoaded', function(){
 
 		myMap.geoObjects.add(myPlacemark)
 	}
+
+	tippy('#tooltip-first', {
+		content: 'Пример современных тенденций - современная методология разработки',
+		theme: 'center-align'
+	});
+
+	tippy('#tooltip-second', {
+		content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
+		theme: 'center-align'
+	});
+
+	tippy('#tooltip-third', {
+		content: 'В стремлении повысить качество',
+		theme: 'center-align'
+	});
+
+	new JustValidate('.contacts-request', {
+		rules: {
+				name: {
+						required: true,
+						minLength: 2,
+						maxLenght: 10
+				},
+				tel: {
+						required: true,
+				},
+		},
+		messages: {
+				name: {
+						minLength: 'Слишком короткое имя',
+						maxLenght: 'Слишком длинное имя',
+				},
+				name: 'Укажите имя',
+				tel: 'Укажите номер телефона',
+		},
+
+		submitHandler: function(form, values, ajax) {
+
+				ajax({
+						url: '/send.php',
+						method: 'POST',
+						data: values,
+						async: true,
+						callback: function(response) {
+								alert('Запрос отправлен! \nСтатус отправки:' + response)
+						},
+						error: function(response) {
+								alert('AJAX submit error! \nResponse from server:' + response)
+						}
+				});
+		},
+});
 });

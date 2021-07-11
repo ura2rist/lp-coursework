@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="style/swiper-bundle.min.css">
 		<link rel="stylesheet" href="style/choices.min.css">
 		<link rel="stylesheet" href="style/graph-modal.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
 		<link rel="stylesheet" href="style/style.css">
 	</head>
 	<body class="page">
@@ -45,25 +46,25 @@
 						<nav class="menu">
 							<ul class="menu-wrap">
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">О нас</a>
+									<a href="#about" class="menu-wrap__link">О нас</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">Галерея</a>
+									<a href="#gallery" class="menu-wrap__link">Галерея</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">Каталог</a>
+									<a href="#catalog" class="menu-wrap__link">Каталог</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">События</a>
+									<a href="#event" class="menu-wrap__link">События</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">Издания</a>
+									<a href="#editions" class="menu-wrap__link">Издания</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">Проекты</a>
+									<a href="#projact" class="menu-wrap__link">Проекты</a>
 								</li>
 								<li class="menu-wrap__element">
-									<a href="#" class="menu-wrap__link">Контакты</a>
+									<a href="#contacts" class="menu-wrap__link">Контакты</a>
 								</li>
 							</ul>
 						</nav>
@@ -231,7 +232,7 @@
 				</div>
 		</header>
 		<main class="main">
-			<section class="slider">
+			<section class="slider" id="slider">
 				<h1 class="visually-hidden">Художественная галлерея Blanchard</h1>
 				<div class="swiper-container slider1">
 					<div class="swiper-wrapper">
@@ -248,13 +249,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="about">
+			<section class="about" id="about">
 				<div class="container-wrap">
 					<h2 class="about__title">О нас</h2>
 					<p class="about__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и ресурсов. Не следует, однако, забывать, что высококачественный прототип будущего проекта влечет за собой процесс внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев населения, а значит, должны быть разоблачены.</p>
 				</div>
 			</section>
-			<section class="gallery">
+			<section class="gallery" id="gallery">
 				<div class="container-wrap gallery-wrap">
 					<div class="gallery__filter">
 						<div class="gallery__filter-top">
@@ -526,7 +527,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="catalog">
+			<section class="catalog" id="catalog">
 				<div class="container-wrap">
 					<div class="catalog__title-wrap">
 						<h2 class="catalog__title">Каталог</h2>
@@ -876,7 +877,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="event">
+			<section class="event" id="event">
 				<div class="container-wrap">
 					<h2 class="event__title">События</h2>
 					<div class="event__list">
@@ -1011,7 +1012,7 @@
 					<button class="event__button" id="event__button">Все события</button>
 				</div>
 			</section>
-			<section class="editions">
+			<section class="editions" id="editions">
 				<div class="container-wrap editions__wrap">
 					<div class="editions__filter">
 						<h2 class="editions__title">Издания</h2>
@@ -1202,10 +1203,10 @@
 					</div>
 				</div>
 			</section>
-			<section class="projact">
+			<section class="projact" id="projact">
 				<div class="container-wrap">
 					<h2 class="projact__title">Проекты</h2>
-					<p class="projact__text">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class="tooltip"><button class="tooltip__btn" aria-describedby="tooltip__content">i</button><span id="tooltip__content" class="tooltip__content" role="tooltip">Пример современных тенденций - современная методология разработки</span></span> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span class="tooltip"><button class="tooltip__btn" aria-describedby="tooltip__content">i</button><span id="tooltip__content" class="tooltip__content" role="tooltip">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции</span></span> исключительно в разрезе маркетинговых и финансовых <span class="tooltip"><button class="tooltip__btn" aria-describedby="tooltip__content">i</button><span id="tooltip__content" class="tooltip__content" role="tooltip">В стремлении повысить качество</span></span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="#" class="projact__link">blanchard-art.ru/projects/about</a></p>
+					<p class="projact__text">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <button class="tooltip__btn" id="tooltip-first" aria-describedby="tooltip__content">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button class="tooltip__btn" id="tooltip-second"  aria-describedby="tooltip__content">i</button> исключительно в разрезе маркетинговых и финансовых <button class="tooltip__btn" id="tooltip-third" aria-describedby="tooltip__content">i</button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="#" class="projact__link">blanchard-art.ru/projects/about</a></p>
 					<div class="projact-part">
 						<h3 class="projact-part__title">Партнёры проектов:</h3>
 						<div class="swiper5-wrap">
@@ -1230,7 +1231,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="contacts">
+			<section class="contacts" id="contacts">
 				<div class="container-wrap">
 					<h2 class="contacts__title">Контакты</h2>
 				</div>
@@ -1239,10 +1240,10 @@
 						<div class="contacts__form">
 							<h3 class="contacts__name">Шоурум №4</h3>
 							<p class="contacts__address">Леонтьевский переулок, дом 5, строение 1</p>
-							<form action="#" method="POST" class="contacts-request">
+							<form action="send.php" method="POST" class="contacts-request">
 								<h4 class="contacts-request__title">Заказать обратный звонок</h4>
-								<input type="text" class="contacts-request__name contacts-request__input" name="name" placeholder="Имя*">
-								<input type="tel" class="contacts-request__phone contacts-request__input" name="phone" placeholder="Телефон*">
+								<input type="text" class="contacts-request__name contacts-request__input" data-validate-field="name" name="name" placeholder="Имя*">
+								<input type="tel" class="contacts-request__phone contacts-request__input" data-validate-field="tel" data-validate-rules="phone" name="tel" placeholder="Телефон*">
 								<button class="contacts-request__buttom" type="submit">Заказать</button>
 							</form>
 							<h4 class="contacts__soc-title">Связаться в один клик</h4>
@@ -1256,7 +1257,7 @@
 							</ul>
 						</div>
 						<div class="contacts__map">
-							<div id="contacts_map" class="contacts_map" style="width: 100%; height: 700px"></div>
+							<div id="contacts_map" class="contacts_map"></div>
 						</div>
 					</div>
 				</div>
@@ -1293,7 +1294,10 @@
 		<script src="script/simplebar.min.js"></script>
 		<script src="script/swiper-bundle.min.js"></script>
 		<script src="script/choices.min.js"></script>
-		<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>		
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
+		<script src="script/just-validate.min.js"></script>
 		<script src="script/script.js"></script>
 	</body>
 </html>
