@@ -1,5 +1,5 @@
-window.addEventListener('DOMContentLoaded', function(){
-  let subMenu = document.querySelectorAll('.category-menu__link'); // Список всех кнопок с саб меню(хедер)
+window.addEventListener('DOMContentLoaded', function () {
+	let subMenu = document.querySelectorAll('.category-menu__link'); // Список всех кнопок с саб меню(хедер)
 	let mobMenu = document.querySelector('.menu-button-mob'); // Кнопка бургер меню
 	let mobClose = document.querySelector('.menu-close-mob'); // Кнопка закрытия меню бургера
 	let searchForm = document.querySelector('.search__button'); // Кнопка поиска
@@ -7,8 +7,8 @@ window.addEventListener('DOMContentLoaded', function(){
 	let sel = document.querySelector('.selectCustom');	// Кастомный селектор
 
 	/* Появление формы поиска */
-	searchForm.addEventListener('click', function(event){
-		if(event.currentTarget.type == 'button'){
+	searchForm.addEventListener('click', function (event) {
+		if (event.currentTarget.type == 'button') {
 			event.preventDefault();
 			event.currentTarget.type = 'submit';
 		}
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function(){
 	});
 
 	/* Закрытие формы поиска */
-	seacrhFormClose.addEventListener('click', function(event){
+	seacrhFormClose.addEventListener('click', function (event) {
 		document.querySelector('.search-mob').classList.toggle('search-mob_active');
 		document.querySelector('.search__text').classList.toggle('search__text_active');
 		document.querySelector('.menu-closeSearch-mob').classList.toggle('menu-closeSearch-mob_active');
@@ -26,42 +26,42 @@ window.addEventListener('DOMContentLoaded', function(){
 	});
 
 	/* Появление бургер меню */
-	mobMenu.addEventListener('click', function(event){
+	mobMenu.addEventListener('click', function (event) {
 		document.querySelector('.menu-container').classList.toggle('menu-container_active');
 	});
 
 	/* Закрытие бургера */
-	mobClose.addEventListener('click', function(){
+	mobClose.addEventListener('click', function () {
 		document.querySelector('.menu-container').classList.toggle('menu-container_active');
 	});
 
 	/* Саб меню */
-  subMenu.forEach(function(item){
-    item.addEventListener('click', function(event){
-			if(document.querySelector('.category-menu__link_active')){
-				if(event.currentTarget.classList.contains('category-menu__link_active')){
+	subMenu.forEach(function (item) {
+		item.addEventListener('click', function (event) {
+			if (document.querySelector('.category-menu__link_active')) {
+				if (event.currentTarget.classList.contains('category-menu__link_active')) {
 					event.currentTarget.classList.toggle('category-menu__link_active');
-				}else{
+				} else {
 					document.querySelector('.category-menu__link_active').classList.remove('category-menu__link_active');
 					event.currentTarget.classList.toggle('category-menu__link_active');
 				}
-			}else{
+			} else {
 				event.currentTarget.classList.toggle('category-menu__link_active');
 			}
-    });
-  });
+		});
+	});
 
 	const swiper = new Swiper('.slider1', {
-    speed: 2000,
-    autoplay: {
-        delay: 4000,
-    },
-    direction: 'horizontal',
-    loop: true,
+		speed: 2000,
+		autoplay: {
+			delay: 4000,
+		},
+		direction: 'horizontal',
+		loop: true,
 		allowTouchMove: false,
-  });
+	});
 
-	const swiper2 =  new Swiper(".slider2", {
+	const swiper2 = new Swiper(".slider2", {
 		slidesPerGroup: 3,
 		slidesPerView: 3,
 		slidesPerColumn: 2,
@@ -75,11 +75,11 @@ window.addEventListener('DOMContentLoaded', function(){
 			prevEl: '.swiper-button-prev',
 		},
 		breakpoints: {
-      1: {
+			1: {
 				slidesPerGroup: 1,
 				slidesPerView: 1,
-        slidesPerColumn: 1,
-      },
+				slidesPerColumn: 1,
+			},
 			450: {
 				slidesPerGroup: 2,
 				slidesPerView: 2,
@@ -98,10 +98,10 @@ window.addEventListener('DOMContentLoaded', function(){
 		searchEnabled: false,
 		shouldSort: false,
 		itemSelectText: '',
-  });
+	});
 
-	document.querySelectorAll('.swiper2-slide-custom').forEach(function(item){
-		item.addEventListener('click', function(event){
+	document.querySelectorAll('.swiper2-slide-custom').forEach(function (item) {
+		item.addEventListener('click', function (event) {
 			document.querySelector('.modal-content').innerHTML = '';
 			let cont = event.currentTarget.querySelector('.swiper-img').outerHTML + event.currentTarget.querySelector('.gallery__hide-content').outerHTML;
 			document.querySelector('.modal-content').innerHTML = cont;
@@ -110,12 +110,12 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	const modal = new GraphModal();
 
-	function viewCatalog(catalogActive){
+	function viewCatalog(catalogActive) {
 		let catalogImg = document.querySelector('.catalog__img');
 		let catalogTitle = document.querySelector('.catalog__content-title');
 		let catalogAge = document.querySelector('.catalog__age');
 		let catalogText = document.querySelector('.catalog__text');
-	
+
 		catalogImg.src = catalogActive.dataset.img;
 		catalogTitle.textContent = catalogActive.textContent;
 		catalogAge.textContent = catalogActive.dataset.age;
@@ -125,17 +125,17 @@ window.addEventListener('DOMContentLoaded', function(){
 	let catalogButton = document.querySelectorAll('.catalog__link');
 
 	viewCatalog(catalogActive = document.querySelector('.catalog__link-active'));
-	
-	catalogButton.forEach(function(item){
-		item.addEventListener('click',function(event){
+
+	catalogButton.forEach(function (item) {
+		item.addEventListener('click', function (event) {
 			catalogActive = document.querySelector('.catalog__link-active').classList.remove('catalog__link-active');
 			item.classList.add('catalog__link-active');
 			viewCatalog(catalogActive = document.querySelector('.catalog__link-active'));
 		});
 	});
 
-	document.querySelectorAll('.catalog__button').forEach(function(item){
-		item.addEventListener('click', function(event){
+	document.querySelectorAll('.catalog__button').forEach(function (item) {
+		item.addEventListener('click', function (event) {
 			document.querySelector('.catalog__button_active').classList.remove('catalog__button_active');
 			item.classList.add('catalog__button_active');
 			document.querySelector('.catalog__list_active').classList.remove('catalog__list_active');
@@ -148,9 +148,9 @@ window.addEventListener('DOMContentLoaded', function(){
 		heightStyle: 'content',
 	});
 
-	document.querySelector('#event__button').addEventListener('click', function(event){
+	document.querySelector('#event__button').addEventListener('click', function (event) {
 		document.querySelector('#event__button').style.display = 'none';
-		document.querySelectorAll('.event__element').forEach(function(item){
+		document.querySelectorAll('.event__element').forEach(function (item) {
 			item.style.display = 'flex';
 		});
 	});
@@ -164,9 +164,9 @@ window.addEventListener('DOMContentLoaded', function(){
 	let swiper4;
 	let swiper4Block = document.querySelector('.slider4');
 
-	function mobileSlederDestroy(){
-		if(window.innerWidth > 660){
-			swiper4 =  new Swiper(".slider4", {
+	function mobileSlederDestroy() {
+		if (window.innerWidth > 660) {
+			swiper4 = new Swiper(".slider4", {
 				pagination: {
 					el: ".editions__pag",
 					type: "fraction",
@@ -193,8 +193,8 @@ window.addEventListener('DOMContentLoaded', function(){
 					}
 				}
 			});
-		}else{
-			if(swiper4Block.classList.contains('swiper-container-initialized')){
+		} else {
+			if (swiper4Block.classList.contains('swiper-container-initialized')) {
 				swiper4.destroy();
 			}
 		}
@@ -206,29 +206,29 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	let editElem = document.querySelector('.editions__subtitle');
 
-	editElem.addEventListener('click', function(event){
-		document.querySelectorAll('.editions__element').forEach(function(item){
+	editElem.addEventListener('click', function (event) {
+		document.querySelectorAll('.editions__element').forEach(function (item) {
 			item.classList.toggle('editions__element_show');
 			if (item.querySelector(".editions__input-filter").checked) {
 				item.classList.add("editions__element_show");
-	 		}
+			}
 		});
 	});
 
-	document.querySelectorAll('.editions__input-filter').forEach(function(item){
-		item.addEventListener('change', function(event){
+	document.querySelectorAll('.editions__input-filter').forEach(function (item) {
+		item.addEventListener('change', function (event) {
 			item.closest('.editions__element').classList.toggle('editions__element_show');
 		})
 	});
 
 
 	var swiper5 = new Swiper(".slider5", {
-    loop: true,
-    loopFillGroupWithBlank: true,
-    navigation: {
-      nextEl: ".projact-next",
-    	prevEl: ".projact-prev",
-    },
+		loop: true,
+		loopFillGroupWithBlank: true,
+		navigation: {
+			nextEl: ".projact-next",
+			prevEl: ".projact-prev",
+		},
 		breakpoints: {
 			1: {
 				slidesPerGroup: 1,
@@ -245,15 +245,15 @@ window.addEventListener('DOMContentLoaded', function(){
 				slidesPerGroup: 3,
 			}
 		}
-  });
+	});
 
 	/* Карта */
 
 	ymaps.ready(init);
-	function init(){
+	function init() {
 		var myMap = new ymaps.Map("contacts_map", {
-				center: [55.75846806898367,37.60108849999989],
-				zoom: 17
+			center: [55.75846806898367, 37.60108849999989],
+			zoom: 17
 		});
 
 		myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
@@ -266,7 +266,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			iconImageOffset: [-5, -38]
 		}),
 
-		myMap.geoObjects.add(myPlacemark)
+			myMap.geoObjects.add(myPlacemark)
 	}
 
 	tippy('#tooltip-first', {
@@ -286,35 +286,56 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	new JustValidate('.contacts-request', {
 		rules: {
-				name: {
-						required: true,
-						minLength: 2,
-						maxLenght: 10
-				},
-				tel: {
-						required: true,
-				},
+			name: {
+				required: true,
+				minLength: 2,
+				maxLenght: 10
+			},
+			tel: {
+				required: true,
+			},
 		},
 		messages: {
-				name: {
-						minLength: 'Слишком короткое имя',
-						maxLenght: 'Слишком длинное имя',
+			name: {
+				minLength: 'Слишком короткое имя',
+				maxLenght: 'Слишком длинное имя',
+			},
+			name: 'Укажите имя',
+			tel: 'Укажите номер телефона',
+		},
+		submitHandler: function (form, values, ajax) {
+			$.ajax({
+				url: 'send.php',
+				method: 'POST',
+				data: values,
+				success: function (response) {
+					new GraphModal().open('second');
 				},
-				name: 'Укажите имя',
-				tel: 'Укажите номер телефона',
+				error: function (response) {
+					alert('AJAX submit error! \nResponse from server:' + response)
+				}
+			});
 		},
-		submitHandler: function(form, values, ajax) {
-				$.ajax({
-						url: 'send.php',
-						method: 'POST',
-						data: values,
-						success: function(response) {
-							new GraphModal().open('second');
-						},
-						error: function(response) {
-							alert('AJAX submit error! \nResponse from server:' + response)
-						}
-				});
-		},
-});
+	});
+
+  const menuLinks = document.querySelectorAll('.menu-wrap__link');
+  if(menuLinks.length > 0){
+    menuLinks.forEach(function(menuLink){
+      menuLink.addEventListener('click', onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e){
+      const menuLink = e.target;
+      if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)){
+        const gotoBlock = document.querySelector(menuLink.dataset.goto);
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+        window.scrollTo({
+          top: gotoBlockValue,
+          behavior: 'smooth'
+        });
+        e.preventDefault();
+      }
+    }
+  }
 });
