@@ -206,6 +206,26 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	let editElem = document.querySelector('.editions__subtitle');
 
+	function showEdit(){
+		document.querySelectorAll('.editions__input-filter').forEach(function(val){
+			if(val.checked){
+				val.closest('.editions__element').classList.add('editions__element_show');
+			}else{
+				if(val.closest('.editions__element').classList.contains('editions__element_show')){
+					val.closest('.editions__element').classList.remove('editions__element_show');
+				}
+			}
+		})
+	}
+
+	showEdit();
+
+	document.querySelectorAll('.editions__input-filter').forEach(function(elem){
+		elem.addEventListener('change', function(event){
+			showEdit();
+		});
+	});
+
 	editElem.addEventListener('click', function (event) {
 		document.querySelectorAll('.editions__element').forEach(function (item) {
 			item.classList.toggle('editions__element_show');
@@ -213,12 +233,6 @@ window.addEventListener('DOMContentLoaded', function () {
 				item.classList.add("editions__element_show");
 			}
 		});
-	});
-
-	document.querySelectorAll('.editions__input-filter').forEach(function (item) {
-		item.addEventListener('change', function (event) {
-			item.closest('.editions__element').classList.toggle('editions__element_show');
-		})
 	});
 
 
@@ -234,7 +248,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				slidesPerGroup: 1,
 				slidesPerView: 1,
 			},
-			550: {
+			700: {
 				slidesPerView: 2,
 				spaceBetween: 50,
 				slidesPerGroup: 2,
