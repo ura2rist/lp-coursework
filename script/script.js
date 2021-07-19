@@ -210,10 +210,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		document.querySelectorAll('.editions__input-filter').forEach(function(val){
 			if(val.checked){
 				val.closest('.editions__element').classList.add('editions__element_show');
-			}else{
-				if(val.closest('.editions__element').classList.contains('editions__element_show')){
-					val.closest('.editions__element').classList.remove('editions__element_show');
-				}
+				val.closest('.editions__element').dataset.edit = 'view';
 			}
 		})
 	}
@@ -224,6 +221,15 @@ window.addEventListener('DOMContentLoaded', function () {
 		elem.addEventListener('change', function(event){
 			showEdit();
 		});
+	});
+
+
+	document.querySelectorAll('.editions__element_show[data-edit="view"]').forEach(function(item){
+		item.addEventListener('change', function(event){
+			alert(1)
+			item.classList.remove('editions__element_show');
+			item.dataset.edit = '';
+		})
 	});
 
 	editElem.addEventListener('click', function (event) {
@@ -237,8 +243,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 	var swiper5 = new Swiper(".slider5", {
-		loop: true,
-		loopFillGroupWithBlank: true,
 		navigation: {
 			nextEl: ".projact-next",
 			prevEl: ".projact-prev",

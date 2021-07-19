@@ -75,6 +75,11 @@
   box-sizing: border-box;
 }
 
+*:focus, *:focus-visible {
+  outline: 0px;  
+  border: 0px;
+}
+
 :root{
   --HeaderFooter-color: #000000;
   --HeaderFooter-textColor: #ffffff;
@@ -989,9 +994,13 @@ h6{
 }
 
 .catalog__link:focus{
+  outline: none;
   color: #fff;
   background-color: #9D5CD0;
 }
+
+.catalog__link:focus:not(:active) {}
+.catalog__link:focus:not(:hover) {}
 
 .catalog__element:hover{
   border-bottom-color: #9D5CD0;
@@ -1115,6 +1124,7 @@ h6{
 .projact-part__img{
   width: 100%;
   height: 100%;
+  position: relative;
   filter: grayscale(100%);
   opacity: 0.7;
 }
@@ -1192,6 +1202,33 @@ h6{
   filter: grayscale(0);
   opacity: 1;
   cursor: pointer;
+}
+
+.slider5-slide:focus::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #9D5CD0;
+}
+
+.slider5-slide:active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #9D5CD0;
+}
+
+.slider5-slide:active .projact-part__img{
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 .editions__wrap{
@@ -1584,12 +1621,12 @@ h6{
 
 .editions__prev::after{
   font-family: swiper-icons;
-  font-size: 15px;
+  font-size: 10px;
   color: #ffffff;
 }
 
 .editions__next::after{
-  font-size: 15px;
+  font-size: 10px;
   color: #ffffff;
 }
 
@@ -2196,7 +2233,7 @@ h6{
   }
 
   .menu-container{
-    height: 63vh;
+    min-height: 790px;
     position: fixed;
     overflow: scroll;
     left: 0;
@@ -2301,6 +2338,9 @@ h6{
 }
 
 @media screen and (max-width: 840px){
+  .menu-container {
+    min-height: 774px;
+  }
   .footer__soc-list {
     margin-top: -10px;
   }
@@ -2603,6 +2643,13 @@ h6{
 }
 
 @media screen and (max-width: 660px){
+  .contacts__contant::before{
+    display: none;
+  }
+  .slider5 {
+    height: 65px;
+    width: 195px;
+}
   .container-footer {
     flex-wrap: wrap;
     justify-content: center;
@@ -3401,7 +3448,7 @@ h6{
 
   .menu-container{
     padding-left: 10px;
-    height: 28vh;
+    min-height: 355px;
   }
   
   .menu {
