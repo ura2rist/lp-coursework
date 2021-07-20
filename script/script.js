@@ -210,7 +210,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		document.querySelectorAll('.editions__input-filter').forEach(function(val){
 			if(val.checked){
 				val.closest('.editions__element').classList.add('editions__element_show');
-				val.closest('.editions__element').dataset.edit = 'view';
+			}else{
+				val.closest('.editions__element').classList.remove('editions__element_show');
 			}
 		})
 	}
@@ -223,21 +224,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-
-	document.querySelectorAll('.editions__element_show[data-edit="view"]').forEach(function(item){
-		item.addEventListener('change', function(event){
-			alert(1)
-			item.classList.remove('editions__element_show');
-			item.dataset.edit = '';
-		})
-	});
-
 	editElem.addEventListener('click', function (event) {
 		document.querySelectorAll('.editions__element').forEach(function (item) {
-			item.classList.toggle('editions__element_show');
-			if (item.querySelector(".editions__input-filter").checked) {
-				item.classList.add("editions__element_show");
-			}
+			item.classList.toggle('editions__element_show-view');
 		});
 	});
 

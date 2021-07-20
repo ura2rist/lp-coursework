@@ -2843,6 +2843,10 @@ h6{
     display: flex;
   }
 
+  .editions__element_show-view{
+    display: flex;
+  }
+
   .edition__close{
     width: 20px;
     height: 20px;
