@@ -2160,7 +2160,15 @@ h6{
   }
 
   .slider1{
-    min-height: 781px;
+    min-height: 768px;
+  }
+
+  .contacts {
+    padding-bottom: 4px;
+  }
+
+  .footer__soc-list {
+    margin-top: -7px;
   }
 
   .slider__block-text__title{
@@ -2188,8 +2196,8 @@ h6{
   }
 
   .slider__block-text{
-    margin: 230px auto 0;
-    padding-left: 47px;
+    margin: 215px auto 0;
+    padding-left: 51px;
   }
 
   .search-mob{
@@ -2229,7 +2237,7 @@ h6{
     flex-direction: row-reverse;
     position: relative;
     justify-content: space-between;
-    padding-top: 46px;
+    padding-top: 31px;
   }
 
   .menu-container{
@@ -2259,7 +2267,7 @@ h6{
   }
 
   .menu-wrap__element{
-    margin-bottom: 3%;
+    margin-bottom: 4%;
   }
 
   .account-wrap__link{
@@ -2338,6 +2346,12 @@ h6{
 }
 
 @media screen and (max-width: 840px){
+  .event {
+    margin-bottom: 85px;
+  }
+  .editions {
+    padding-bottom: 4px;
+  }
   .menu-container {
     min-height: 774px;
   }
@@ -2376,15 +2390,24 @@ h6{
 
   .slider5 {
     height: 106px;
+    width: 568px;
   }
 
   .projact-part__title {
     margin-bottom: 35px;
   }
 
+  .contacts {
+    padding-bottom: 3px;
+  }
+
+  .contacts-request__input {
+    margin-bottom: 24px;
+  }
+
   .projact__title {
-    margin-bottom: 25px;
-    padding-top: 92px;
+    margin-bottom: 21px;
+    padding-top: 87px;
   }
 
   .editions__content__subtitle{
@@ -2640,6 +2663,14 @@ h6{
     width: 60%;
     left: 97px;
   }
+}
+
+@media screen and (max-width: 766px){
+  .slider5 {
+      height: 65px;
+      width: 195px;
+  }
+
 }
 
 @media screen and (max-width: 660px){
@@ -3031,6 +3062,9 @@ h6{
 }
 
 @media screen and (max-width: 450px){
+  .menu-wrap__element {
+    margin-bottom: 4.6%;
+  }
   .menu-button-mob {
     margin-top: -4px;
   }
@@ -3069,7 +3103,7 @@ h6{
 }
 
 .contacts__form {
-  padding-bottom: 18px;
+  padding-bottom: 15px;
 }
 
 .footer__soc-link svg {
@@ -3126,6 +3160,7 @@ h6{
   .projact__title{
     font-size: 28px;
     margin-bottom: 16px;
+    padding-top: 50px;
   }
 
   .swiper4-slide-custom{
@@ -3250,7 +3285,7 @@ h6{
     display: flex;
     flex-direction: column;
     min-height: 440px;
-    margin-bottom: 0;
+    margin-bottom: 14px;
   }
 
   .gallery__swiper-wrapper{
@@ -3267,7 +3302,7 @@ h6{
 
   .gallery__filter{
     max-width: 290px;
-    margin-bottom: 115px;
+    margin-bottom: 82px;
   }
 
   .choices{
@@ -3438,7 +3473,7 @@ h6{
   }
 
   .account-wrap__link{
-    padding: 10px 30px 10px 45px;
+    padding: 13px 30px 13px 45px;
     font-size: 12px;
   }
 
@@ -3457,9 +3492,14 @@ h6{
   
   .menu {
     padding-top: 50px;
+    margin-bottom: 4%;
   }
 
   .edit-wrap{
     display: none;
+  }
+
+  .line-close {
+    width: 25px;
   }
 }
