@@ -1122,8 +1122,7 @@ h6{
 }
 
 .projact-part__img{
-  width: 100%;
-  height: 100%;
+  height: 59px;
   position: relative;
   filter: grayscale(100%);
   opacity: 0.7;
@@ -1978,7 +1977,19 @@ h6{
   width: 45px;
   height: 45px;
 }
+
+.slider5-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #CACACA;
+}
+
 @media screen and (max-width: 1500px){
+  .projact-part__img {
+    height: 49px;
+  }
+
   .footer__soc-element {
     margin-right: 30px;
   }
@@ -2346,6 +2357,13 @@ h6{
 }
 
 @media screen and (max-width: 840px){
+  .search__text::placeholder{
+    color: transparent;
+  }
+  .projact-part__img {
+    height: 38px;
+  }
+
   .event {
     margin-bottom: 85px;
   }
@@ -2668,12 +2686,15 @@ h6{
 @media screen and (max-width: 766px){
   .slider5 {
       height: 65px;
-      width: 195px;
+      max-width: 300px;
   }
-
 }
 
-@media screen and (max-width: 660px){
+@media screen and (max-width: 660px){ 
+.projact-part__img {
+  height: 24px;
+}
+
   .contacts__contant::before{
     display: none;
   }
@@ -2738,6 +2759,7 @@ h6{
   .contacts__map{
     width: 100%;
     top: 53px;
+      min-height: 670px;
   }
 
   .contacts__name{
@@ -3062,6 +3084,11 @@ h6{
 }
 
 @media screen and (max-width: 450px){
+  .menu-closeSearch-mob {
+    top: -20px;
+    right: -31px;
+    left: auto;
+  }
   .menu-wrap__element {
     margin-bottom: 4.6%;
   }
@@ -3395,8 +3422,7 @@ h6{
   }
 
   .search-mob_active{
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(40px);
+    background-color: rgba(0, 0, 0, 0.9);
   }
 
   .logo__img{
@@ -3451,15 +3477,18 @@ h6{
   }
 
   .search-mob_active{
-    padding-top: 40px;
+    padding-top: 55px;
     min-height: 75px;
+    padding-bottom: 20px;
   }
 
   .search-mob_active::before{
-    left: 85px;
+    left: 75px;
+    bottom: 15px;
   }
 
   .search__button{
+    margin-right: 0;
     padding-top: 5px;
   }
 

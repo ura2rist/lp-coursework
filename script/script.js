@@ -12,6 +12,9 @@ window.addEventListener('DOMContentLoaded', function () {
 			event.preventDefault();
 			event.currentTarget.type = 'submit';
 		}
+		if(window.innerWidth <= 660){
+			document.querySelector('.top-wrap').insertAdjacentHTML('afterbegin','<button type="button" class="search__button decor-but"><svg width="20" height="20" viewBox="0 0 23 22" fill="none" class="search-svg" xmlns="http://www.w3.org/2000/svg"><rect width="6.8678" class="search__fill" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"></rect><path fill-rule="evenodd" class="search__fill" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"></path></svg></button>');
+		}
 		document.querySelector('.search-mob').classList.toggle('search-mob_active');
 		document.querySelector('.search__text').classList.toggle('search__text_active');
 		document.querySelector('.menu-closeSearch-mob').classList.toggle('menu-closeSearch-mob_active');
@@ -23,6 +26,10 @@ window.addEventListener('DOMContentLoaded', function () {
 		document.querySelector('.search__text').classList.toggle('search__text_active');
 		document.querySelector('.menu-closeSearch-mob').classList.toggle('menu-closeSearch-mob_active');
 		searchForm.type = 'button';
+
+		if(window.innerWidth <= 600){
+			document.querySelector('.decor-but').remove();
+		}
 	});
 
 	/* Появление бургер меню */
